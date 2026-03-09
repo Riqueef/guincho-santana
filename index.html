@@ -8,6 +8,158 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Ajustes para celular */
+        @media (max-width: 768px) {
+            .contact-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+            .contact-info span {
+                color: white !important;
+                font-size: 14px;
+                width: 100%;
+                text-align: center;
+            }
+            .contact-info span i {
+                color: white !important;
+                margin-right: 5px;
+            }
+            .contact-info a {
+                color: white !important;
+            }
+            /* Aumentando a logo no celular */
+            .logo-text h1 {
+                font-size: 24px !important;
+            }
+            .logo-text p {
+                font-size: 14px !important;
+            }
+            .logo-img {
+                max-width: 120px !important;
+            }
+        }
+        
+        /* Aumentando a logo no geral */
+        .logo-text h1 {
+            font-size: 28px;
+            margin: 0;
+            color: #333;
+        }
+        .logo-text p {
+            font-size: 16px;
+            margin: 0;
+            color: #666;
+        }
+        .logo-img {
+            max-width: 180px;
+            height: auto;
+        }
+        .logo-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        /* Botão do Instagram */
+        .btn-instagram {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(45deg, #f09433, #d62976, #962fbf);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .btn-instagram:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Instagram float */
+        .instagram-float {
+            position: fixed;
+            bottom: 160px;
+            right: 15px;
+            background: linear-gradient(45deg, #f09433, #d62976, #962fbf);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .instagram-float:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Ajuste dos botões float */
+        .whatsapp-float, .phone-float {
+            transition: transform 0.3s;
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 15px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        .phone-float {
+            background-color: #e74c3c;
+            bottom: 110px;
+        }
+        .whatsapp-float:hover, .phone-float:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Garantir que textos da barra de contato fiquem brancos */
+        .contact-bar {
+            background: #2c3e50;
+            padding: 10px 0;
+        }
+        .contact-info span, 
+        .contact-info span i,
+        .contact-info a {
+            color: white !important;
+        }
+        
+        /* Ajustes na logo do rodapé */
+        .footer-logo .logo-text h3 {
+            font-size: 20px;
+            margin: 0;
+            color: white;
+        }
+        .footer-logo .logo-text p {
+            font-size: 14px;
+            margin: 0;
+            color: #ccc;
+        }
+        .footer-logo .logo-text i {
+            color: #e74c3c !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Barra de Contato Rápida -->
@@ -16,7 +168,7 @@
             <div class="contact-info">
                 <span><i class="fas fa-phone-alt"></i> (11) 96844-0782</span>
                 <span><i class="fab fa-whatsapp"></i> (11) 96844-0782 (WhatsApp)</span>
-                <span><i class="fab fa-instagram"></i> <a href="https://instagram.com/matheusguinchos" target="_blank" style="color: white; text-decoration: none;">@matheusguinchos</a></span>
+                <span><i class="fab fa-instagram"></i> <a href="https://instagram.com/matheusguinchos" target="_blank">@matheusguinchos</a></span>
                 <span><i class="fas fa-clock"></i> 24 horas | 7 dias por semana</span>
             </div>
         </div>
@@ -25,15 +177,13 @@
     <!-- Navegação -->
     <nav class="navbar">
         <div class="container">
-            <!-- ÁREA PARA LOGO - VOCÊ VAI COLOCAR SUA LOGO AQUI -->
+            <!-- ÁREA PARA LOGO - AGORA MAIOR -->
             <a href="#home" class="logo">
                 <div class="logo-container">
-                    <!-- Espaço para sua logo -->
                     <div class="logo-placeholder">
                         <img src="imagens/logo-guicho-santana.png" alt="Guincho Santana" class="logo-img">
-                        <!-- Se não tiver logo ainda, mostra o texto -->
                         <div class="logo-text" id="logoText">
-                            <i class="fas fa-truck-tow"></i>
+                            <i class="fas fa-truck-tow" style="font-size: 40px; color: #e74c3c;"></i>
                             <div>
                                 <h1>Guincho Santana</h1>
                                 <p>Socorro Veicular 24h</p>
@@ -71,7 +221,7 @@
                         <a href="tel:11968440782" class="btn-emergencia">
                             <i class="fas fa-phone"></i> LIGUE AGORA: (11) 96844-0782
                         </a>
-                        <a href="https://wa.me/5511968440782" class="btn-whatsapp">
+                        <a href="https://api.whatsapp.com/send?phone=5511968440782" class="btn-whatsapp">
                             <i class="fab fa-whatsapp"></i> CHAMAR NO WHATSAPP
                         </a>
                     </div>
@@ -93,8 +243,8 @@
 
                     <!-- Botão do Instagram no Hero -->
                     <div class="hero-social" style="text-align: center; margin-top: 30px;">
-                        <a href="https://instagram.com/matheusguinchos" target="_blank" class="btn-instagram" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(45deg, #f09433, #d62976, #962fbf); color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-                            <i class="fab fa-instagram" style="font-size: 1.3rem;"></i>
+                        <a href="https://instagram.com/matheusguinchos" target="_blank" class="btn-instagram">
+                            <i class="fab fa-instagram"></i>
                             SIGA NO INSTAGRAM @matheusguinchos
                         </a>
                     </div>
@@ -395,7 +545,7 @@
     </section>
 
     <!-- Botões Fixos (WhatsApp, Telefone e Instagram) -->
-    <a href="https://wa.me/5511968440782" class="whatsapp-float" target="_blank">
+    <a href="https://api.whatsapp.com/send?phone=5511968440782" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -404,7 +554,7 @@
     </a>
 
     <!-- Botão do Instagram Flutuante -->
-    <a href="https://www.instagram.com/matheusguinchos" class="instagram-float" target="_blank" style="position: fixed; bottom: 160px; right: 15px; background: linear-gradient(45deg, #f09433, #d62976, #962fbf); color: white; width: 60px; height: 60px; border-radius: 50%; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 100; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+    <a href="https://www.instagram.com/matheusguinchos" class="instagram-float" target="_blank">
         <i class="fab fa-instagram"></i>
     </a>
 
@@ -418,7 +568,7 @@
                         <div class="logo-placeholder">
                             <img src="imagens/logo-guicho-santana.png" alt="Guincho Santana" class="logo-img">
                             <div class="logo-text">
-                                <i class="fas fa-truck-tow"></i>
+                                <i class="fas fa-truck-tow" style="font-size: 30px; color: #e74c3c;"></i>
                                 <div>
                                     <h3>Guincho Santana</h3>
                                     <p>Socorro Veicular 24h</p>
@@ -433,7 +583,7 @@
                         <a href="https://www.instagram.com/matheusguinchos" target="_blank" style="display: inline-block; background: linear-gradient(45deg, #f09433, #d62976, #962fbf); color: white; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 10px;">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/5511968440782" target="_blank" style="display: inline-block; background: #25D366; color: white; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 10px;">
+                        <a href="https://api.whatsapp.com/send?phone=5511968440782" target="_blank" style="display: inline-block; background: #25D366; color: white; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 10px;">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
